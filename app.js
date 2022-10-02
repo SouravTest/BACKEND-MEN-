@@ -4,11 +4,15 @@ const {errorHandler} = require('./middleware/errorMiddleware')
 const port = process.env.PORT || 5000
 const connectDB = require('./config/db')
 
+var cors = require('cors')
+
 connectDB()
 
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+
+app.use(cors())
 
 // app.get('/api/test',(req,res)=>{
 //     res.status(200).json({message : 'TEST SERVER RUNNING'})
