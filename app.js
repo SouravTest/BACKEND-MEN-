@@ -14,6 +14,8 @@ app.use(express.urlencoded({extended:false}))
 //     res.status(200).json({message : 'TEST SERVER RUNNING'})
 // })
 
+app.use('/api/v1/superadmin',require('./routes/superAdminRoutes'))
+
 app.use('/api/v1/category',require('./routes/categoryRoutes'))
 app.use('/api/v1/subcategory',require('./routes/subcategoryRoutes'))
 
