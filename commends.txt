@@ -2,4 +2,6 @@ npm init
 npm i express dotenv mongoose
 npm i -D nodemon
 npm i body-parser
+npm i express-async-handler
+npm i cors
 
