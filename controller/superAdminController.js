@@ -10,7 +10,7 @@ const Superadmin = require('../models/superAdminModel')
 //@route     GET   api/v1/superadmin/get/:id
 //@access    Public
 const getSuperAdminDetails = asyncHandler(async (req, res) => {
-    const superadmin = await Superadmin.findById(req.params.id)
+    const superadmin = await Superadmin.findById(req.params.id, ['_id','name', 'email'])
     if (!superadmin) {
         res.status(400)
         throw new Error('Super admin Not found')
