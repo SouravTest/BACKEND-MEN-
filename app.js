@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended:false}))
 // })
 
 app.use('/api/v1/category',require('./routes/categoryRoutes'))
-
+app.use('/api/v1/subcategory',require('./routes/subcategoryRoutes'))
 
 app.use(errorHandler)
 
