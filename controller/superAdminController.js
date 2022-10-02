@@ -78,6 +78,7 @@ const addSuperAdmin = asyncHandler(async (req, res) => {
             _id: superadmin.id,
             name: superadmin.name,
             email: superadmin.email,
+            token: generateToken(superadmin.id)
         })
     } else {
         res.status(400)
@@ -92,31 +93,32 @@ const addSuperAdmin = asyncHandler(async (req, res) => {
 //@access    Private
 const loginSuperAdmin = asyncHandler(async (req, res) => {
 
-    const {email,password} = req.body
-      if( !email || !password){
+    const { email, password } = req.body
+    if (!email || !password) {
         res.status(400)
-       throw new Error('Enter email & password')
+        throw new Error('Enter email & password')
     }
 
     //checking email
-    const superAdmin = await Superadmin.findOne({ email })
-    if (superAdmin) {
-        if(await bcrypt.compare(password,superAdmin.password)){
+    const superadmin = await Superadmin.findOne({ email })
+    if (superadmin) {
+        if (await bcrypt.compare(password, superadmin.password)) {
             res.status(201).json({
-                _id: superAdmin.id,
-                name: superAdmin.name,
-                email: superAdmin.email,
+                _id: superadmin.id,
+                name: superadmin.name,
+                email: superadmin.email,
+                token: generateToken(superadmin.id)
             })
-        }else{
+        } else {
             res.status(400)
-        throw new Error('Wrong Email or password')
+            throw new Error('Wrong Email or password')
         }
-    }else{
+    } else {
         res.status(400)
         throw new Error('Wrong Email or password ..')
     }
 
-   
+
 })
 
 
@@ -147,8 +149,12 @@ const updateSuperAdmin = asyncHandler(async (req, res) => {
 
 
 
-
-
+// GENERAT TOKEN (JWT)//
+const generateToken = (id) => {
+    return jwt.sign({ id }, process.env.JWT_SECRET, {
+        expiresIn: '1d'
+    })
+}
 
 
 module.exports = {
