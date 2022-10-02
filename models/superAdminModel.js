@@ -3,15 +3,23 @@ const mongoose = require('mongoose')
 const superAdminSchema = mongoose.Schema({
     name: {
         type: String,
-        requird: [true, 'Enter category name'],
+        requird: [true, 'Enter Superadmin name']
+    },
+    phone: {
+        type: String,
+        requird: [true, 'Enter Superadmin phone']
     },
     email: {
         type: String,
-        requird: [true, 'Enter a email'],
+        requird: [true, 'Enter Superadmin email'],
         unique: true
     }, password: {
         type: String,
-        requird: [true, 'Enter password'],
+        requird: [true, 'Enter Superadmin password']
+    },
+    role: {
+        type: String,
+        default: 'super_admin'
     }, status: {
         type: Boolean,
         default: true
