@@ -5,11 +5,11 @@ const productSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         requird: true,
         ref: 'Category'
-    }, sub_category: {
+    }, subcategory_id: {
         type: mongoose.Schema.Types.ObjectId,
         requird: true,
         ref: 'Subcategory'
-    }, brand: {
+    }, brand_id: {
         type: mongoose.Schema.Types.ObjectId,
         requird: true,
         ref: 'Brand'
@@ -23,23 +23,23 @@ const productSchema = mongoose.Schema({
         requird: [true, 'Enter product desc']
     },
     mrp: {
-        type: number,
+         type: Number,
         requird: [true, 'Enter product mrp']
 
     }, sell_price: {
-        type: number,
+         type: Number,
         requird: [true, 'Enter product sell price']
 
     }, discount: {
-        type: number,
+         type: Number,
         requird: [true, 'Enter product discount']
 
     }, stock: {
-        type: number,
+         type: Number,
         requird: [true, 'Enter product stock']
 
     },
-    avalable_size: {
+    available_size: {
         type: String,
         requird: [true, 'Enter product sizes'],
     },
