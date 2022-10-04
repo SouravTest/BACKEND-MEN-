@@ -13,7 +13,7 @@ const getSpecificCustomerCartList = asyncHandler(async (req, res) => {
 
 
 //@desc     delete all products from customer cart
-//@route     DELETE   api/v1/cart/get/:id
+//@route     DELETE   api/v1/cart/deleteall/:id
 //@access    private
 const clearCart = asyncHandler(async (req, res) => {
     const cart = await Cart.deleteMany({ customer_id: req.params.id })
