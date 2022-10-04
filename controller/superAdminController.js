@@ -7,10 +7,10 @@ const Superadmin = require('../models/superAdminModel')
 
 
 //@desc      Get super admin details
-//@route     GET   api/v1/superadmin/get/:id
+//@route     GET   api/v1/superadmin/me
 //@access    PRIVATE
 const getSuperAdminDetails = asyncHandler(async (req, res) => {
-    const superadmin = await Superadmin.findById(req.params.id, ['_id', 'name', 'email'])
+    const superadmin = await Superadmin.findById(req.user._id, ['_id', 'name', 'email'])
     if (!superadmin) {
         res.status(400)
         throw new Error('Super admin Not found')
@@ -89,7 +89,7 @@ const addSuperAdmin = asyncHandler(async (req, res) => {
 
 
 //@desc      Login super admin
-//@route     POST   api/v1/superadmin/delete/:id
+//@route     POST   api/v1/superadmin/login/:id
 //@access    PUBLIC
 const loginSuperAdmin = asyncHandler(async (req, res) => {
 
@@ -124,39 +124,50 @@ const loginSuperAdmin = asyncHandler(async (req, res) => {
 
 
 //@desc      update super admin
-//@route     PUT   api/v1/superadmin/update/:id
+//@route     PUT   api/v1/superadmin/update
 //@access    Private
 const updateSuperAdmin = asyncHandler(async (req, res) => {
 
-    if (!req.body.category_name) {
+    if (!req.body.email) {
         res.status(400)
-        throw new Error('Enter updated category name')
+        throw new Error('Enter updated email')
+    }
+
+    if (!req.body.name) {
+        res.status(400)
+        throw new Error('Enter updated name')
     }
 
 
-    const category = await Category.findById(req.params.id)
-    if (!category) {
+
+    const superadmin = await Superadmin.findById(req.user._id)
+    if (!superadmin) {
         res.status(400)
-        throw new Error('Category Not found')
+        throw new Error('superadmin Not found')
     }
 
-    const updatecategory = await Category.findByIdAndUpdate(req.params.id, req.body, {
+    const updatesuperadmin = await Superadmin.findByIdAndUpdate(req.user._id, req.body, {
         new: true
     })
 
-    res.status(200).json({ message: 'catagory update :' + updatecategory });
+    res.status(200).json({ message: 'superadmin update :' + updatesuperadmin });
 })
 
 
 
 //--- GENERAT TOKEN (JWT) ---//
 const generateToken = (id) => {
-    return jwt.sign({ id }, process.env.JWT_SECRET, {
+    return jwt.sign({ sudo_id: id }, process.env.JWT_SECRET, {
         expiresIn: '1d'
     })
 }
 
 
+
 module.exports = {
     getSuperAdminDetails, addSuperAdmin, loginSuperAdmin, updateSuperAdmin
 }
+
+
+
+// Bearer Authentication
