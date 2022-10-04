@@ -3,15 +3,17 @@ const router = express.Router()
 
 const { getSpecificCustomerCartList, addIntoCart, updateCart, deleteCart, clearCart } = require('../controller/cartController')
 
-router.get('/get/:id', getSpecificCustomerCartList)
+const {CustomerProtect} = require('../middleware/authCustomerMiddleware')
 
-router.post('/add', addIntoCart);
+router.get('/get/:id',CustomerProtect, getSpecificCustomerCartList)
 
-router.put('/update/:id', updateCart);
+router.post('/add',CustomerProtect, addIntoCart);
 
-router.delete('/delete/:id', deleteCart)
+router.put('/update/:id',CustomerProtect, updateCart);
 
-router.delete('/deleteall/:id', clearCart)
+router.delete('/delete/:id',CustomerProtect, deleteCart)
+
+router.delete('/deleteall/:id',CustomerProtect, clearCart)
 
 
 module.exports = router
