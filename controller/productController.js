@@ -46,7 +46,7 @@ const getSpecificProduct = asyncHandler(async (req, res) => {
 
 
 //@desc      Add product
-//@route     GET   api/v1/product/add
+//@route     POST   api/v1/product/add
 //@access    Private
 const addProduct = asyncHandler(async (req, res) => {
     const { category_id, subcategory_id, brand_id, product_name, description, mrp, sell_price, stock, available_size, available_color } = req.body
@@ -66,7 +66,7 @@ const addProduct = asyncHandler(async (req, res) => {
 
 
 //@desc      update product
-//@route     GET   api/v1/product/update/:id
+//@route     PUT   api/v1/product/update/:id
 //@access    Private
 const updateProduct = asyncHandler(async (req, res) => {
 
@@ -92,7 +92,7 @@ const updateProduct = asyncHandler(async (req, res) => {
 
 
 //@desc      delete product
-//@route     GET   api/v1/product/delete/:id
+//@route     DELETE   api/v1/product/delete/:id
 //@access    Private
 const deleteProduct = asyncHandler(async (req, res) => {
 

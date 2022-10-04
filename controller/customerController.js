@@ -8,7 +8,7 @@ const Customer = require('../models/customerModel')
 
 //@desc      Get customer details
 //@route     GET   api/v1/customer/get/:id
-//@access    Public
+//@access    PRIVATE
 const getCustomerDetails = asyncHandler(async (req, res) => {
     const customer = await Customer.findById(req.params.id, ['_id', 'name', 'email'])
     if (!customer) {
@@ -20,8 +20,8 @@ const getCustomerDetails = asyncHandler(async (req, res) => {
 
 
 
-//@desc      Add customer
-//@route     GET   api/v1/customer/register
+//@desc      Add customer(Register)
+//@route     POST   api/v1/customer/register
 //@access    public
 
 const addCustomer = asyncHandler(async (req, res) => {
@@ -88,8 +88,8 @@ const addCustomer = asyncHandler(async (req, res) => {
 
 
 //@desc      Login customer 
-//@route     GET   api/v1/customer/login
-//@access    Private
+//@route     POST   api/v1/customer/login
+//@access    Public
 const loginCustomer = asyncHandler(async (req, res) => {
 
     const { email, password } = req.body
@@ -123,7 +123,7 @@ const loginCustomer = asyncHandler(async (req, res) => {
 
 
 //@desc      update customer
-//@route     GET   api/v1/customer/update/:id
+//@route     PUT   api/v1/customer/update/:id
 //@access    Private
 const updateCustomer = asyncHandler(async (req, res) => {
 
@@ -153,7 +153,7 @@ const updateCustomer = asyncHandler(async (req, res) => {
 
 //@desc      Get all Customer
 //@route     GET   api/v1/customer/getall
-//@access    Public
+//@access    PRIVATE
 const getAllCustomer = asyncHandler(async (req, res) => {
     const customer = await Customer.find()
     res.status(200).json(customer);
@@ -162,7 +162,7 @@ const getAllCustomer = asyncHandler(async (req, res) => {
 
 
 //@desc      delete customer
-//@route     GET   api/v1/customer/delete/:id
+//@route     DELETE   api/v1/customer/delete/:id
 //@access    Private
 const deleteCustomer = asyncHandler(async (req, res) => {
 
@@ -178,7 +178,12 @@ const deleteCustomer = asyncHandler(async (req, res) => {
     res.status(200).json({ message: 'delete customer :' + req.params.id });
 })
 
-// GENERAT TOKEN (JWT)//
+
+
+
+
+
+// ------GENERAT TOKEN (JWT) ---------//
 const generateToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, {
         expiresIn: '1d'

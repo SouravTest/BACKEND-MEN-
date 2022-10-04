@@ -8,9 +8,9 @@ const Superadmin = require('../models/superAdminModel')
 
 //@desc      Get super admin details
 //@route     GET   api/v1/superadmin/get/:id
-//@access    Public
+//@access    PRIVATE
 const getSuperAdminDetails = asyncHandler(async (req, res) => {
-    const superadmin = await Superadmin.findById(req.params.id, ['_id','name', 'email'])
+    const superadmin = await Superadmin.findById(req.params.id, ['_id', 'name', 'email'])
     if (!superadmin) {
         res.status(400)
         throw new Error('Super admin Not found')
@@ -21,8 +21,8 @@ const getSuperAdminDetails = asyncHandler(async (req, res) => {
 
 
 //@desc      Add super admin
-//@route     GET   api/v1/superadmin/register
-//@access    Private
+//@route     POST   api/v1/superadmin/register
+//@access    Public
 //@time limit : Just ONCE
 const addSuperAdmin = asyncHandler(async (req, res) => {
 
@@ -89,8 +89,8 @@ const addSuperAdmin = asyncHandler(async (req, res) => {
 
 
 //@desc      Login super admin
-//@route     GET   api/v1/superadmin/delete/:id
-//@access    Private
+//@route     POST   api/v1/superadmin/delete/:id
+//@access    PUBLIC
 const loginSuperAdmin = asyncHandler(async (req, res) => {
 
     const { email, password } = req.body
@@ -124,7 +124,7 @@ const loginSuperAdmin = asyncHandler(async (req, res) => {
 
 
 //@desc      update super admin
-//@route     GET   api/v1/superadmin/update/:id
+//@route     PUT   api/v1/superadmin/update/:id
 //@access    Private
 const updateSuperAdmin = asyncHandler(async (req, res) => {
 
@@ -149,7 +149,7 @@ const updateSuperAdmin = asyncHandler(async (req, res) => {
 
 
 
-// GENERAT TOKEN (JWT)//
+//--- GENERAT TOKEN (JWT) ---//
 const generateToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, {
         expiresIn: '1d'

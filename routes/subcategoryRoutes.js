@@ -1,16 +1,18 @@
 const express = require('express')
 const router = express.Router()
-const { getAllSubcategory,getSpecificSubcategory,addSubcategory,updateSubategory,deleteSubcategory} = require('../controller/subcategoryController')
+const { getAllSubcategory, getSpecificSubcategory, addSubcategory, updateSubategory, deleteSubcategory } = require('../controller/subcategoryController')
 
-router.get('/getall',getAllSubcategory)
+const { SuperAdminProtect } = require('../middleware/authSuperAdminMiddleware')
 
-router.get('/get/:id',getSpecificSubcategory)
+router.get('/getall', getAllSubcategory)
 
-router.post('/add',addSubcategory);
+router.get('/get/:id', getSpecificSubcategory)
 
-router.put('/update/:id',updateSubategory);
+router.post('/add', SuperAdminProtect, addSubcategory);
 
- router.delete('/delete/:id',deleteSubcategory)
+router.put('/update/:id', SuperAdminProtect, updateSubategory);
+
+router.delete('/delete/:id', SuperAdminProtect, deleteSubcategory)
 
 
 module.exports = router

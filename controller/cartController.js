@@ -78,7 +78,7 @@ const updateCart = asyncHandler(async (req, res) => {
 
 
 //@desc      delete cart
-//@route     GET   api/v1/cart/delete/:id
+//@route     DELETE   api/v1/cart/delete/:id
 //@access    Private
 const deleteCart = asyncHandler(async (req, res) => {
 

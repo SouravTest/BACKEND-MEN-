@@ -1,6 +1,6 @@
 const asyncHandler = require('express-async-handler')
 
-const  Subcategory = require('../models/subcategoryModel')
+const Subcategory = require('../models/subcategoryModel')
 const Category = require('../models/categoryModel')
 
 //@desc      Get all subcategory
@@ -17,7 +17,7 @@ const getAllSubcategory = asyncHandler(async (req, res) => {
 //@access    Public
 const getSpecificSubcategory = asyncHandler(async (req, res) => {
     const subategory = await Subcategory.findById(req.params.id)
-    if(!subategory){
+    if (!subategory) {
         res.status(400)
         throw new Error('Subategory Not found')
     }
@@ -27,10 +27,10 @@ const getSpecificSubcategory = asyncHandler(async (req, res) => {
 
 
 //@desc      Add subcategory
-//@route     GET   api/v1/subcategory/add
+//@route     POST   api/v1/subcategory/add
 //@access    Private
 const addSubcategory = asyncHandler(async (req, res) => {
-    if (!req.body.subcategory_name ) {
+    if (!req.body.subcategory_name) {
         res.status(400)
         throw new Error('Enter subcategory name ')
     }
@@ -40,14 +40,14 @@ const addSubcategory = asyncHandler(async (req, res) => {
     }
 
     const category = await Category.findById(req.body.category_id)
-    if(!category){
+    if (!category) {
         res.status(400)
         throw new Error('Category Not found')
     }
 
     const subcatagory = await Subcategory.create({
-        category : req.body.category_id,
-        subcategory_name : req.body.subcategory_name
+        category: req.body.category_id,
+        subcategory_name: req.body.subcategory_name
     })
 
     res.status(200).json(subcatagory);
@@ -55,7 +55,7 @@ const addSubcategory = asyncHandler(async (req, res) => {
 
 
 //@desc      update subcategory
-//@route     GET   api/v1/subcategory/update/:id
+//@route     PUT   api/v1/subcategory/update/:id
 //@access    Private
 const updateSubategory = asyncHandler(async (req, res) => {
 
@@ -66,13 +66,13 @@ const updateSubategory = asyncHandler(async (req, res) => {
 
 
     const subcategory = await Subcategory.findById(req.params.id)
-    if(!subcategory){
+    if (!subcategory) {
         res.status(400)
         throw new Error('Subategory Not found')
     }
 
-    const updatesubcategory = await Subcategory.findByIdAndUpdate(req.params.id,req.body,{
-        new:true
+    const updatesubcategory = await Subcategory.findByIdAndUpdate(req.params.id, req.body, {
+        new: true
     })
 
     res.status(200).json({ message: 'subcatagory update :' + updatesubcategory });
@@ -80,13 +80,13 @@ const updateSubategory = asyncHandler(async (req, res) => {
 
 
 //@desc      delete subcategory
-//@route     GET   api/v1/subcategory/delete/:id
+//@route     DELETE   api/v1/subcategory/delete/:id
 //@access    Private
 const deleteSubcategory = asyncHandler(async (req, res) => {
 
-    
+
     const subcategory = await Subcategory.findById(req.params.id)
-    if(!subcategory){
+    if (!subcategory) {
         res.status(400)
         throw new Error('Subategory Not found')
     }
@@ -101,5 +101,5 @@ const deleteSubcategory = asyncHandler(async (req, res) => {
 
 
 module.exports = {
-    getAllSubcategory,getSpecificSubcategory,addSubcategory,updateSubategory,deleteSubcategory
+    getAllSubcategory, getSpecificSubcategory, addSubcategory, updateSubategory, deleteSubcategory
 }

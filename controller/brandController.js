@@ -1,6 +1,6 @@
 const asyncHandler = require('express-async-handler')
 
-const  Brand = require('../models/brandModel')
+const Brand = require('../models/brandModel')
 
 //@desc      Get all brand
 //@route     GET   api/v1/brand/getall
@@ -15,7 +15,12 @@ const getAllBrand = asyncHandler(async (req, res) => {
 //@route     GET   api/v1/brand/get/:id
 //@access    Public
 const getSpecificBrand = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: 'get specific Brand :' + req.params.id });
+    const brand = await Brand.findById(req.params.id)
+    if (!brand) {
+        res.status(400)
+        throw new Error('brand Not found')
+    }
+    res.status(200).json(brand);
 })
 
 
@@ -30,7 +35,7 @@ const addBrand = asyncHandler(async (req, res) => {
     }
 
     const brand = await Brand.create({
-        brand_name : req.body.brand_name
+        brand_name: req.body.brand_name
     })
 
     res.status(200).json(brand);
@@ -49,13 +54,13 @@ const updateBrand = asyncHandler(async (req, res) => {
 
 
     const brand = await Brand.findById(req.params.id)
-    if(!brand){
+    if (!brand) {
         res.status(400)
         throw new Error('brand Not found')
     }
 
-    const updatebrand = await Brand.findByIdAndUpdate(req.params.id,req.body,{
-        new:true
+    const updatebrand = await Brand.findByIdAndUpdate(req.params.id, req.body, {
+        new: true
     })
 
     res.status(200).json({ message: 'brand update :' + updatebrand });
@@ -67,9 +72,9 @@ const updateBrand = asyncHandler(async (req, res) => {
 //@access    Private
 const deleteBrand = asyncHandler(async (req, res) => {
 
-    
+
     const brand = await Brand.findById(req.params.id)
-    if(!brand){
+    if (!brand) {
         res.status(400)
         throw new Error('brand Not found')
     }
