@@ -46,7 +46,7 @@ const addSubcategory = asyncHandler(async (req, res) => {
     }
 
     const subcatagory = await Subcategory.create({
-        category: req.body.category_id,
+        category_id: req.body.category_id,
         subcategory_name: req.body.subcategory_name
     })
 
