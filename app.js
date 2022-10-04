@@ -27,6 +27,8 @@ app.use('/api/v1/product',require('./routes/productRoutes'))
 
 app.use('/api/v1/customer',require('./routes/customerRoutes'))
 
+app.use('/api/v1/cart',require('./routes/cartRoutes'))
+
 app.use(errorHandler)
 
 app.listen(port,()=>console.log(`server started at port : ${port}`))
