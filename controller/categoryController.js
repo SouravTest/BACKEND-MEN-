@@ -15,7 +15,12 @@ const getAllCategory = asyncHandler(async (req, res) => {
 //@route     GET   api/v1/category/get/:id
 //@access    Public
 const getSpecificCategory = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: 'get specific category :' + req.params.id });
+    const category = await Category.findById(req.params.id)
+    if (!category) {
+        res.status(400)
+        throw new Error('Subategory Not found')
+    }
+    res.status(200).json(category);
 })
 
 

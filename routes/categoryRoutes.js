@@ -4,9 +4,9 @@ const { getAllCategory, getSpecificCategory, addCategory, updateCategory, delete
 
 const { SuperAdminProtect } = require('../middleware/authSuperAdminMiddleware')
 
-router.get('/getall', SuperAdminProtect, getAllCategory)
+router.get('/getall', getAllCategory)
 
-router.get('/get/:id', SuperAdminProtect, getSpecificCategory)
+router.get('/get/:id', getSpecificCategory)
 
 router.post('/add', SuperAdminProtect, addCategory);
 
