@@ -14,9 +14,13 @@ app.use(express.urlencoded({extended:false}))
 
 app.use(cors())
 
-// app.get('/api/test',(req,res)=>{
-//     res.status(200).json({message : 'TEST SERVER RUNNING'})
-// })
+app.get('/',(req,res)=>{
+    res.status(200).json({message : '......WELCOME....'})
+})
+
+app.get('/api/v1',(req,res)=>{
+    res.status(200).json({message : 'API SERVER RUNNING (v1)....'})
+})
 
 app.use('/api/v1/superadmin',require('./routes/superAdminRoutes'))
 
