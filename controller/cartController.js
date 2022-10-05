@@ -3,11 +3,11 @@ const asyncHandler = require('express-async-handler')
 const Cart = require('../models/cartModel')
 
 //@desc      Get all cart details
-//@route     GET   api/v1/cart/getall
+//@route     GET   api/v1/cart/cartlist
 //@access    private
 
 const getSpecificCustomerCartList = asyncHandler(async (req, res) => {
-    const cart = await Cart.find({ customer_id: req.params.id })
+    const cart = await Cart.find({ customer_id: req.user._id })
     res.status(200).json(cart);
 })
 
@@ -26,7 +26,7 @@ const clearCart = asyncHandler(async (req, res) => {
 //@route     POST   api/v1/cart/add
 //@access    Private
 const addIntoCart = asyncHandler(async (req, res) => {
-    const { product_id, quantity, customer_id } = req.body
+    const { product_id, quantity } = req.body
 
     if (!product_id || !quantity) {
         res.status(400)
@@ -38,7 +38,7 @@ const addIntoCart = asyncHandler(async (req, res) => {
     let cart = '';
     if (!Checkcart) {
         cart = await Cart.create({
-            customer_id: customer_id, product_id, quantity
+            customer_id: req.user._id, product_id, quantity
         })
     } else {
         cart = await Cart.findByIdAndUpdate(product_id, req.body.quantity, {
