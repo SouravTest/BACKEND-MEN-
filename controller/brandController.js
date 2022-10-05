@@ -26,7 +26,7 @@ const getSpecificBrand = asyncHandler(async (req, res) => {
 
 
 //@desc      Add brand
-//@route     GET   api/v1/brand/add
+//@route     POST   api/v1/brand/add
 //@access    Private
 const addBrand = asyncHandler(async (req, res) => {
     if (!req.body.brand_name) {
@@ -43,7 +43,7 @@ const addBrand = asyncHandler(async (req, res) => {
 
 
 //@desc      update brand
-//@route     GET   api/v1/brand/update/:id
+//@route     PUT   api/v1/brand/update/:id
 //@access    Private
 const updateBrand = asyncHandler(async (req, res) => {
 
@@ -68,7 +68,7 @@ const updateBrand = asyncHandler(async (req, res) => {
 
 
 //@desc      delete brand
-//@route     GET   api/v1/brand/delete/:id
+//@route     DELETE   api/v1/brand/delete/:id
 //@access    Private
 const deleteBrand = asyncHandler(async (req, res) => {
 
