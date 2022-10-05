@@ -12,7 +12,7 @@ const CustomerProtect = asyncHandler(async (req,res,next) => {
             //verify jwt
             const decode = jwt.verify(token,process.env.JWT_SECRET)
             //GET USER FROM TOKEN
-            req.user = await Superadmin.findById(decode.id).select('-password')
+            req.user = await Customer.findById(decode.id).select('-password')
             next()
 
         } catch (error) {

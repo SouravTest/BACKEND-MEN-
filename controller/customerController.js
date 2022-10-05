@@ -7,10 +7,10 @@ const Customer = require('../models/customerModel')
 
 
 //@desc      Get customer details
-//@route     GET   api/v1/customer/get/:id
+//@route     GET   api/v1/customer/me
 //@access    PRIVATE
 const getCustomerDetails = asyncHandler(async (req, res) => {
-    const customer = await Customer.findById(req.params.id, ['_id', 'name', 'email'])
+    const customer = await Customer.findById(req.user._id, ['_id', 'name', 'email'])
     if (!customer) {
         res.status(400)
         throw new Error('customer Not found')
@@ -33,19 +33,19 @@ const addCustomer = asyncHandler(async (req, res) => {
         throw new Error('Enter all fields')
     }
 
-    if (!req.body.customer_name) {
+    if (!customer_name) {
         res.status(400)
         throw new Error('Enter name')
     }
-    if (!req.body.email) {
+    if (!email) {
         res.status(400)
         throw new Error('Enter email')
     }
-    if (!req.body.mobile) {
+    if (!mobile) {
         res.status(400)
         throw new Error('Enter mobile')
     }
-    if (!req.body.password) {
+    if (!password) {
         res.status(400)
         throw new Error('Enter password')
     }
@@ -53,8 +53,8 @@ const addCustomer = asyncHandler(async (req, res) => {
 
     //checking if available email
 
-    const superAdminExists = await Customer.findOne({ email })
-    if (superAdminExists) {
+    const customerExists = await Customer.findOne({ email })
+    if (customerExists) {
         res.status(400)
         throw new Error('Email alredy exists')
     }
@@ -200,7 +200,7 @@ module.exports = {
 
 
 // {
-//     "name":"sourav",
+//     "customer_name":"sourav",
 //     "email":"customer@gmail.com",
 //   "password":"123",
 //   "mobile":"9874563210",

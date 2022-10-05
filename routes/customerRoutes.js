@@ -10,7 +10,7 @@ router.post('/register', addCustomer)
 
 router.post('/login', loginCustomer);
 
-router.get('/get/:id',CustomerProtect, getCustomerDetails)
+router.get('/me',CustomerProtect, getCustomerDetails)
 
 router.put('/update/:id',CustomerProtect, updateCustomer);
 
