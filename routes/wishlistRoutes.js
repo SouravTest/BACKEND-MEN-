@@ -3,15 +3,15 @@ const router = express.Router()
 
 const { getSpecificCustomerWishlistList, addIntoWishlist, deleteWishlist, clearWishlist } = require('../controller/wishlistController')
 
-const {CustomerProtect} = require('../middleware/authCustomerMiddleware')
+const { CustomerProtect } = require('../middleware/authCustomerMiddleware')
 
-router.get('/get/:id',CustomerProtect, getSpecificCustomerWishlistList)
+router.get('/mywishlist', CustomerProtect, getSpecificCustomerWishlistList)
 
-router.post('/add',CustomerProtect, addIntoWishlist);
+router.post('/add', CustomerProtect, addIntoWishlist);
 
-router.delete('/delete/:id',CustomerProtect, deleteWishlist)
+router.delete('/delete/:id', CustomerProtect, deleteWishlist)
 
-router.delete('/deleteall/:id',CustomerProtect, clearWishlist)
+router.delete('/deleteall', CustomerProtect, clearWishlist)
 
 
 module.exports = router
