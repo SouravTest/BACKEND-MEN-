@@ -79,7 +79,7 @@ const deleteCategory = asyncHandler(async (req, res) => {
         throw new Error('Category Not found')
     }
 
-    await category.remove()
+    await category.findOneAndDelete(req.params.id)
 
     res.status(200).json({ message: 'delete cat :' + req.params.id });
 })

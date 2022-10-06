@@ -173,7 +173,7 @@ const deleteCustomer = asyncHandler(async (req, res) => {
         throw new Error('customer Not found')
     }
 
-    await customer.remove()
+    await customer.findOneAndDelete(req.params.id)
 
     res.status(200).json({ message: 'delete customer :' + req.params.id });
 })

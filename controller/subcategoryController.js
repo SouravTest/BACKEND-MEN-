@@ -91,7 +91,7 @@ const deleteSubcategory = asyncHandler(async (req, res) => {
         throw new Error('Subategory Not found')
     }
 
-    await subcategory.remove()
+    await subcategory.findOneAndDelete(req.params.id)
 
     res.status(200).json({ message: 'delete success subcategory :' + req.params.id });
 })

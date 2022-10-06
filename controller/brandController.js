@@ -79,7 +79,7 @@ const deleteBrand = asyncHandler(async (req, res) => {
         throw new Error('brand Not found')
     }
 
-    await brand.remove()
+    await brand.findOneAndDelete(req.params.id)
 
     res.status(200).json({ message: 'delete brand :' + req.params.id });
 })

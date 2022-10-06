@@ -89,7 +89,7 @@ const deleteCart = asyncHandler(async (req, res) => {
         throw new Error('cart product Not found')
     }
 
-    await cart.remove()
+    await cart.findOneAndDelete(req.params.id)
 
     res.status(200).json({ message: 'delete cart product :' + req.params.id });
 })
