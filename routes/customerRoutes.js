@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-const { getCustomerDetails, addCustomer, loginCustomer, updateCustomer, getAllCustomer, deleteCustomer } = require('../controller/customerController.js')
-const { getAllCustomerAddresses, getCustomerAddress, addCustomerAddress, updateCustomerAddress, deleteCustomerAddress } = require('../controller/customerAddressController.js')
+const { getCustomerDetails, addCustomer, loginCustomer, updateCustomer, getAllCustomer, deleteCustomer } = require('../controller/customerController')
+const { getAllCustomerAddresses, getCustomerAddress, addCustomerAddress, updateCustomerAddress, deleteCustomerAddress } = require('../controller/customerAddressController')
 
 const { CustomerProtect } = require('../middleware/authCustomerMiddleware')
 const { SuperAdminProtect } = require('../middleware/authSuperAdminMiddleware')

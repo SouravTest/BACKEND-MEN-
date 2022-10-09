@@ -6,19 +6,26 @@ const OrderSchema = mongoose.Schema({
         requird: true,
         ref: 'Customer'
     },
-    prooduct_id: {
+    product_id: {
         type: mongoose.Schema.Types.ObjectId,
         requird: true,
         ref: 'Product'
-    }
-    ,
-    qty: {
-        type: number,
-        requird: [true, 'Enter Customer name']
     },
-    price: {
-        type: number,
-        requird: [true, 'Enter Customer name']
+    ordered_price: {
+        type: Number,
+        requird: [true, 'Enter Ordered product price at time of order']
+    },
+    orderd_quantity: {
+        type: Number,
+        requird: [true, 'Enter Ordered product quantity']
+    },
+    ordered_size: {
+        type: String,
+        requird: [true, 'Enter Ordered product size']
+    },
+    ordered_color: {
+        type: String,
+        requird: [true, 'Enter Ordered product color']
     },
     name: {
         type: String,
@@ -29,7 +36,7 @@ const OrderSchema = mongoose.Schema({
         requird: [true, 'Enter Customer mobile']
     },
     pin: {
-        type: number,
+        type: Number,
         requird: [true, 'Enter Customer pin']
     },
     locality: {
@@ -60,6 +67,22 @@ const OrderSchema = mongoose.Schema({
         type: String,
         requird: [true, 'Enter Customer address_type']
     },
+    shared_details_with: {
+        type: [String],
+        default: []
+    },
+    order_status: {
+        type: String,
+        default: 'Orderd'
+    },
+    isCancled: {
+        type: Boolean,
+        default: false
+    },
+    isDelivered: {
+        type: Boolean,
+        default: false
+    }
 }, {
     timestamps: true
 })

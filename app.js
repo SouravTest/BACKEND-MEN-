@@ -34,6 +34,8 @@ app.use('/api/v1/customer',require('./routes/customerRoutes'))
 app.use('/api/v1/cart',require('./routes/cartRoutes'))
 app.use('/api/v1/wishlist',require('./routes/wishlistRoutes'))
 
+app.use('/api/v1/order',require('./routes/orderRoutes'))
+
 app.use(errorHandler)
 
 app.listen(port,()=>console.log(`server started at port : ${port}`))

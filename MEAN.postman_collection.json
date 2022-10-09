@@ -838,6 +838,132 @@
 				"description": ""
 			},
 			"response": []
+		},
+		{
+			"name": "order - all orders   [private]",
+			"request": {
+				"url": "http://localhost:8000/api/v1/order/allorders",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NTMzNDU0NiwiZXhwIjoxNjY1NDIwOTQ2fQ.zG3PiUFSWPly5sO4AZ8juW9sBG5t5vB9v2k2FFvW4X8",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "order - add order   [private]",
+			"request": {
+				"url": "http://localhost:8000/api/v1/order/addorder",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NTMzNDU0NiwiZXhwIjoxNjY1NDIwOTQ2fQ.zG3PiUFSWPly5sO4AZ8juW9sBG5t5vB9v2k2FFvW4X8",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\t\r\n\t\"product_id\":\"633b2c20db9c8c675d0ee853\",\r\n\t\"orderd_quantity\":\"4\",\r\n\t\"ordered_price\":5555,\r\n\t\"ordered_size\":\"XL\",\r\n\t\"ordered_color\":\"dark\",\r\n    \"name\":\"BUB4444\",\r\n    \"mobile\":\"99999999\",\r\n    \"pin\":\"78965\",\r\n    \"locality\":\"purulia\",\r\n    \"address\":\"purulia bazr\",\r\n    \"city\":\"purulia\",\r\n    \"state\":\"west bengal\",\r\n    \"landmark\":\"near bus stand\",\r\n    \"alt_mobile\":\"7896541230\",\r\n    \"address_type\":\"home\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "order - get specific order   [private]",
+			"request": {
+				"url": "http://localhost:8000/api/v1/order/getorder/63431761959958fe5960535c",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NTMzNDU0NiwiZXhwIjoxNjY1NDIwOTQ2fQ.zG3PiUFSWPly5sO4AZ8juW9sBG5t5vB9v2k2FFvW4X8",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "order - update order details   [private]",
+			"request": {
+				"url": "http://localhost:8000/api/v1/order/updateorderdetails/63431761959958fe5960535c",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NTMzNDU0NiwiZXhwIjoxNjY1NDIwOTQ2fQ.zG3PiUFSWPly5sO4AZ8juW9sBG5t5vB9v2k2FFvW4X8",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"orderd_quantity\":\"44\",\n\t\"ordered_size\":\"XXX\",\n\t\"ordered_color\":\"pink\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "order - update order address   [private]",
+			"request": {
+				"url": "http://localhost:8000/api/v1/order/updateorderaddress/63431761959958fe5960535c",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NTMzNDU0NiwiZXhwIjoxNjY1NDIwOTQ2fQ.zG3PiUFSWPly5sO4AZ8juW9sBG5t5vB9v2k2FFvW4X8",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"skk\",\n    \"mobile\": \"109\",\n    \"pin\": 111,\n    \"locality\": \"delhi\",\n    \"address\": \"delhi new bazar\",\n    \"city\": \"new delhi\",\n    \"state\": \"delhi\",\n    \"landmark\": \"near auto stand\",\n    \"alt_mobile\": \"904\",\n    \"address_type\": \"office\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "order - cancel specific order  [private]",
+			"request": {
+				"url": "http://localhost:8000/api/v1/order/cancelorder/63431761959958fe5960535c",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NTMzNDU0NiwiZXhwIjoxNjY1NDIwOTQ2fQ.zG3PiUFSWPly5sO4AZ8juW9sBG5t5vB9v2k2FFvW4X8",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }
