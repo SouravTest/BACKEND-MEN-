@@ -737,6 +737,107 @@
 				"description": ""
 			},
 			"response": []
+		},
+		{
+			"name": "customer - saved addresses   [private]",
+			"request": {
+				"url": "http://localhost:8000/api/v1/customer/savedaddresses",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NTMzNDU0NiwiZXhwIjoxNjY1NDIwOTQ2fQ.zG3PiUFSWPly5sO4AZ8juW9sBG5t5vB9v2k2FFvW4X8",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "customer - add address   [private]",
+			"request": {
+				"url": "http://localhost:8000/api/v1/customer/addaddress",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NTMzNDU0NiwiZXhwIjoxNjY1NDIwOTQ2fQ.zG3PiUFSWPly5sO4AZ8juW9sBG5t5vB9v2k2FFvW4X8",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t \"name\":\"BUBU\",\n\t \"mobile\":\"99999999\",\n\t \"pin\":\"78965\", \n\t \"locality\":\"purulia\", \n\t \"address\":\"purulia bazr\", \n\t \"city\":\"purulia\", \n\t \"state\":\"west bengal\", \n\t \"landmark\":\"near bus stand\", \n\t \"alt_mobile\":\"7896541230\", \n\t \"address_type\":\"home\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "customer - get specific address   [private]",
+			"request": {
+				"url": "http://localhost:8000/api/v1/customer/getaddress/634300b737ac6199ff0d842f",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NTMzNDU0NiwiZXhwIjoxNjY1NDIwOTQ2fQ.zG3PiUFSWPly5sO4AZ8juW9sBG5t5vB9v2k2FFvW4X8",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "customer - update address   [private]",
+			"request": {
+				"url": "http://localhost:8000/api/v1/customer/updateaddress/634300b737ac6199ff0d842f",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NTMzNDU0NiwiZXhwIjoxNjY1NDIwOTQ2fQ.zG3PiUFSWPly5sO4AZ8juW9sBG5t5vB9v2k2FFvW4X8",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"BUBU789\",\r\n    \"mobile\":\"0000000000\",\r\n    \"pin\":\"78965\",\r\n    \"locality\":\"purulia\",\r\n    \"address\":\"purulia bazr\",\r\n    \"city\":\"purulia\",\r\n    \"state\":\"west bengal\",\r\n    \"landmark\":\"near bus stand OOOKKKK\",\r\n    \"alt_mobile\":\"7896541230\",\r\n    \"address_type\":\"hom2e\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "customer - remove specific address    [private]",
+			"request": {
+				"url": "http://localhost:8000/api/v1/customer/removeaddress/634300b737ac6199ff0d842f",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NTMzNDU0NiwiZXhwIjoxNjY1NDIwOTQ2fQ.zG3PiUFSWPly5sO4AZ8juW9sBG5t5vB9v2k2FFvW4X8",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }

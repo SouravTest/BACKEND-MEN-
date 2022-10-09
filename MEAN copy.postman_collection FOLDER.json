@@ -1,0 +1,861 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MEAN copy",
+		"_postman_id": "3174ff85-9022-8012-d7c1-17bbeeabee29",
+		"description": "NODE EXPRESS MONGO  --- BACKEND API'S\n\nhttp://localhost:8000/api/v1/",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CUSTOMER",
+			"description": "FOR CUSTOMER USE ONLY",
+			"item": [
+				{
+					"name": "customer - details  (me)  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/customer/me",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NDk1NTUyNiwiZXhwIjoxNjY1MDQxOTI2fQ.R_P0ZAETu9Vip5NOGrk4BUCica0nUd4h8KQ1goDXxeE",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "customer - update  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/customer/update/633d331addbeaa44f1f51c17",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NDk1NTE2MiwiZXhwIjoxNjY1MDQxNTYyfQ.B_pTnf4qWLqkIBezB99P6CcqmO5BYCOaPOxE6XskqHI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer_name\":\"sourav    upd\",\r\n    \"email\":\"sk@gmail.com\",\r\n  \"mobile\":\"9874563210\",\r\n  \"gender\":\"M\",\r\n  \"pincode\":\"7000001\",\r\n  \"city\":\"kolkata\"\r\n  }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "cart - cartlist  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/cart/cartlist",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NDk1NTE2MiwiZXhwIjoxNjY1MDQxNTYyfQ.B_pTnf4qWLqkIBezB99P6CcqmO5BYCOaPOxE6XskqHI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "cart - add  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/cart/add",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NDk1NTE2MiwiZXhwIjoxNjY1MDQxNTYyfQ.B_pTnf4qWLqkIBezB99P6CcqmO5BYCOaPOxE6XskqHI",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"product_id\":\"633b2be6db9c8c675d0ee84c\",\n\t\"quantity\":\"2\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "cart - update  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/cart/update/633d3910b071156097b58685",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NDk1NTE2MiwiZXhwIjoxNjY1MDQxNTYyfQ.B_pTnf4qWLqkIBezB99P6CcqmO5BYCOaPOxE6XskqHI",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"quantity\":\"7\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "cart - delete single [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/cart/delete/633d3910b071156097b58685",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NDk1NTE2MiwiZXhwIjoxNjY1MDQxNTYyfQ.B_pTnf4qWLqkIBezB99P6CcqmO5BYCOaPOxE6XskqHI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "cart - clearcart  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/cart/clearcart",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NDk1NTE2MiwiZXhwIjoxNjY1MDQxNTYyfQ.B_pTnf4qWLqkIBezB99P6CcqmO5BYCOaPOxE6XskqHI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "wishlist - mywishlist  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/wishlist/mywishlist",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NDk1NTE2MiwiZXhwIjoxNjY1MDQxNTYyfQ.B_pTnf4qWLqkIBezB99P6CcqmO5BYCOaPOxE6XskqHI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "wishlist - add  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/wishlist/add",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NDk1NTE2MiwiZXhwIjoxNjY1MDQxNTYyfQ.B_pTnf4qWLqkIBezB99P6CcqmO5BYCOaPOxE6XskqHI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n     \"product_id\":\"633b2be6db9c8c675d0ee84c\"\r\n  }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "wishlist -  delete  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/wishlist/delete/633e778c274ffdcb61b3adc8",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NDk1NTE2MiwiZXhwIjoxNjY1MDQxNTYyfQ.B_pTnf4qWLqkIBezB99P6CcqmO5BYCOaPOxE6XskqHI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "wishlist - deleteall  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/wishlist/deleteall",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NDk1NTE2MiwiZXhwIjoxNjY1MDQxNTYyfQ.B_pTnf4qWLqkIBezB99P6CcqmO5BYCOaPOxE6XskqHI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "customer - saved addresses   [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/customer/savedaddresses",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NTMzNDU0NiwiZXhwIjoxNjY1NDIwOTQ2fQ.zG3PiUFSWPly5sO4AZ8juW9sBG5t5vB9v2k2FFvW4X8",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "customer - add address   [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/customer/addaddress",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NTMzNDU0NiwiZXhwIjoxNjY1NDIwOTQ2fQ.zG3PiUFSWPly5sO4AZ8juW9sBG5t5vB9v2k2FFvW4X8",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"name\":\"BUBU\",\n\t \"mobile\":\"99999999\",\n\t \"pin\":\"78965\", \n\t \"locality\":\"purulia\", \n\t \"address\":\"purulia bazr\", \n\t \"city\":\"purulia\", \n\t \"state\":\"west bengal\", \n\t \"landmark\":\"near bus stand\", \n\t \"alt_mobile\":\"7896541230\", \n\t \"address_type\":\"home\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "customer - get specific address   [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/customer/getaddress/634300b737ac6199ff0d842f",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NTMzNDU0NiwiZXhwIjoxNjY1NDIwOTQ2fQ.zG3PiUFSWPly5sO4AZ8juW9sBG5t5vB9v2k2FFvW4X8",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "customer - update address   [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/customer/updateaddress/634300b737ac6199ff0d842f",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NTMzNDU0NiwiZXhwIjoxNjY1NDIwOTQ2fQ.zG3PiUFSWPly5sO4AZ8juW9sBG5t5vB9v2k2FFvW4X8",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"BUBU789\",\r\n    \"mobile\":\"0000000000\",\r\n    \"pin\":\"78965\",\r\n    \"locality\":\"purulia\",\r\n    \"address\":\"purulia bazr\",\r\n    \"city\":\"purulia\",\r\n    \"state\":\"west bengal\",\r\n    \"landmark\":\"near bus stand OOOKKKK\",\r\n    \"alt_mobile\":\"7896541230\",\r\n    \"address_type\":\"hom2e\"\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "customer - remove specific address    [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/customer/removeaddress/634300b737ac6199ff0d842f",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2QzMzFhZGRiZWFhNDRmMWY1MWMxNyIsImlhdCI6MTY2NTMzNDU0NiwiZXhwIjoxNjY1NDIwOTQ2fQ.zG3PiUFSWPly5sO4AZ8juW9sBG5t5vB9v2k2FFvW4X8",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SUPER ADMIN",
+			"description": "FOR SUPER ADMIN USE ONLY",
+			"item": [
+				{
+					"name": "SuperAdmin-register  [public]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/superadmin/register",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\n\t\"name\":\"super admin\",\n\t\"email\":\"admin@gmail.com\",\n\t\"password\":\"123\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SuperAdmin-Login [public]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/superadmin/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"admin@gmail.com\",\n\t\"password\":\"123\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SuperAdmin-details (me)  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/superadmin/me",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWRvX2lkIjoiNjMzYzU5N2YwYTA2Mjg1NGMyYzBkYzc0IiwiaWF0IjoxNjY0OTAwMjI1LCJleHAiOjE2NjQ5ODY2MjV9.j5MkUGAZ87RRtaF16ySFCzzI39U9mUo-n7tx33iWDqo",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SuperSdmin-update  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/superadmin/update",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWRvX2lkIjoiNjMzYzU5N2YwYTA2Mjg1NGMyYzBkYzc0IiwiaWF0IjoxNjY0OTAwMjI1LCJleHAiOjE2NjQ5ODY2MjV9.j5MkUGAZ87RRtaF16ySFCzzI39U9mUo-n7tx33iWDqo",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"super admin sourav\",\n\t\"email\":\"admin@gmail.com\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "category - add  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/category/add",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWRvX2lkIjoiNjMzYzU5N2YwYTA2Mjg1NGMyYzBkYzc0IiwiaWF0IjoxNjY0OTAxMDIzLCJleHAiOjE2NjQ5ODc0MjN9.BzUwRaeXFYcYYQEt03Sh_ABko9DOFMXiqjWQK8EUqOo",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"category_name\":\"laptop\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "category - update  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/category/update/633c607a2540a91439cc6431",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWRvX2lkIjoiNjMzYzU5N2YwYTA2Mjg1NGMyYzBkYzc0IiwiaWF0IjoxNjY0OTAxMDIzLCJleHAiOjE2NjQ5ODc0MjN9.BzUwRaeXFYcYYQEt03Sh_ABko9DOFMXiqjWQK8EUqOo",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"category_name\":\"test upd\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "category - delete  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/category/delete/633c607a2540a91439cc6431",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWRvX2lkIjoiNjMzYzU5N2YwYTA2Mjg1NGMyYzBkYzc0IiwiaWF0IjoxNjY0OTAxMDIzLCJleHAiOjE2NjQ5ODc0MjN9.BzUwRaeXFYcYYQEt03Sh_ABko9DOFMXiqjWQK8EUqOo",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "subcategory -  update  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/subcategory/update/633953d46b228ce75b623487",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWRvX2lkIjoiNjMzYzU5N2YwYTA2Mjg1NGMyYzBkYzc0IiwiaWF0IjoxNjY0OTAxMDIzLCJleHAiOjE2NjQ5ODc0MjN9.BzUwRaeXFYcYYQEt03Sh_ABko9DOFMXiqjWQK8EUqOo",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"subcategory_name\":\"new updated\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "subcategory - delete  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/subcategory/delete/633953d46b228ce75b623487",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWRvX2lkIjoiNjMzYzU5N2YwYTA2Mjg1NGMyYzBkYzc0IiwiaWF0IjoxNjY0OTAxMDIzLCJleHAiOjE2NjQ5ODc0MjN9.BzUwRaeXFYcYYQEt03Sh_ABko9DOFMXiqjWQK8EUqOo",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "subcategory - add  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/subcategory/add",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWRvX2lkIjoiNjMzYzU5N2YwYTA2Mjg1NGMyYzBkYzc0IiwiaWF0IjoxNjY0OTAxMDIzLCJleHAiOjE2NjQ5ODc0MjN9.BzUwRaeXFYcYYQEt03Sh_ABko9DOFMXiqjWQK8EUqOo",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"category_id\":\"633c60552540a91439cc642e\",\n\t\"subcategory_name\":\"FOLD\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "brand - add  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/brand/add",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWRvX2lkIjoiNjMzYzU5N2YwYTA2Mjg1NGMyYzBkYzc0IiwiaWF0IjoxNjY0OTAxMDIzLCJleHAiOjE2NjQ5ODc0MjN9.BzUwRaeXFYcYYQEt03Sh_ABko9DOFMXiqjWQK8EUqOo",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"brand_name\":\"apple\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "brand - update  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/brand/update/633d2abf077ff187012fd8c4",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWRvX2lkIjoiNjMzYzU5N2YwYTA2Mjg1NGMyYzBkYzc0IiwiaWF0IjoxNjY0OTAxMDIzLCJleHAiOjE2NjQ5ODc0MjN9.BzUwRaeXFYcYYQEt03Sh_ABko9DOFMXiqjWQK8EUqOo",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"brand_name\":\"apples\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "brand - delete  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/brand/delete/633d2abf077ff187012fd8c4",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWRvX2lkIjoiNjMzYzU5N2YwYTA2Mjg1NGMyYzBkYzc0IiwiaWF0IjoxNjY0OTAxMDIzLCJleHAiOjE2NjQ5ODc0MjN9.BzUwRaeXFYcYYQEt03Sh_ABko9DOFMXiqjWQK8EUqOo",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "product - add  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/product/add",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWRvX2lkIjoiNjMzYzU5N2YwYTA2Mjg1NGMyYzBkYzc0IiwiaWF0IjoxNjY0OTAxMDIzLCJleHAiOjE2NjQ5ODc0MjN9.BzUwRaeXFYcYYQEt03Sh_ABko9DOFMXiqjWQK8EUqOo",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_id\":\"6339389a0ed694d558290b93\",\r\n    \"subcategory_id\":\"63395440677f4bd6d3b48d4b\",\r\n    \"brand_id\":\"633b1f5d64932b3ec39942e5\",\r\n    \"product_name\":\"nnnnnnnnnnnnnnnnn hp new 5g\",\r\n    \"description\":\"5g mob +\",\r\n    \"mrp\":\"99999\",\r\n    \"sell_price\":\"88888\",\r\n    \"stock\":\"5\",\r\n    \"available_size\":\"null\",\r\n    \"available_color\":\"black,white,blue\"\r\n  }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "product - update  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/product/update/633d2d83fa436fd42228602a",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWRvX2lkIjoiNjMzYzU5N2YwYTA2Mjg1NGMyYzBkYzc0IiwiaWF0IjoxNjY0OTAxMDIzLCJleHAiOjE2NjQ5ODc0MjN9.BzUwRaeXFYcYYQEt03Sh_ABko9DOFMXiqjWQK8EUqOo",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"product_name\":\"ttttt\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "product - delete  [private]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/product/delete/633d2d83fa436fd42228602a",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWRvX2lkIjoiNjMzYzU5N2YwYTA2Mjg1NGMyYzBkYzc0IiwiaWF0IjoxNjY0OTAxMDIzLCJleHAiOjE2NjQ5ODc0MjN9.BzUwRaeXFYcYYQEt03Sh_ABko9DOFMXiqjWQK8EUqOo",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "customer - getall  [private] (superadmin)",
+					"request": {
+						"url": "http://localhost:8000/api/v1/customer/getall",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWRvX2lkIjoiNjMzYzU5N2YwYTA2Mjg1NGMyYzBkYzc0IiwiaWF0IjoxNjY0OTAxMDIzLCJleHAiOjE2NjQ5ODc0MjN9.BzUwRaeXFYcYYQEt03Sh_ABko9DOFMXiqjWQK8EUqOo",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "customer - delete [private] (superadmin)",
+					"request": {
+						"url": "http://localhost:8000/api/v1/customer/delete/633b369e642c087c71abc69d",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWRvX2lkIjoiNjMzYzU5N2YwYTA2Mjg1NGMyYzBkYzc0IiwiaWF0IjoxNjY0OTAxMDIzLCJleHAiOjE2NjQ5ODc0MjN9.BzUwRaeXFYcYYQEt03Sh_ABko9DOFMXiqjWQK8EUqOo",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GENERAL (PUBLIC)",
+			"description": "",
+			"item": [
+				{
+					"name": "category - getall  [public]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/category/getall",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "category - get Specific  [public]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/category/get/633c607a2540a91439cc6431",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "subcategory - getall  [public]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/subcategory/getall",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "subcategory - get specific  [public]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/subcategory/get/633953d46b228ce75b623487",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "brand - getall  [public]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/brand/getall",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "brand - get specific  [public]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/brand/get/633b1f5d64932b3ec39942e5",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "product - getall  [public]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/product/getall",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "product - get specific  [public]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/product/get/633b2c4ccf0649e348ed15c7",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "customer - register  [public]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/customer/register",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customer_name\":\"sourav new\",\r\n  \"email\":\"sk@gmail.com\",\r\n  \"password\":\"123\",\r\n  \"mobile\":\"9874563210\",\r\n  \"gender\":\"M\",\r\n  \"pincode\":\"7000001\",\r\n  \"city\":\"kolkata\"\r\n  }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "customer - login  [public]",
+					"request": {
+						"url": "http://localhost:8000/api/v1/customer/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"sk@gmail.com\",\n\t\"password\":\"123\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

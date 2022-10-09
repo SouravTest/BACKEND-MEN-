@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const CustomerAddressSchema = mongoose.Schema({
-    customer: {
+    customer_id: {
         type: mongoose.Schema.Types.ObjectId,
         requird: true,
         ref: 'Customer'
@@ -15,7 +15,7 @@ const CustomerAddressSchema = mongoose.Schema({
         requird: [true, 'Enter Customer mobile']
     },
     pin: {
-        type: number,
+        type: Number,
         requird: [true, 'Enter Customer pin']
     },
     locality: {
